@@ -62,7 +62,7 @@
         <div class="nav-content">
         <div class="menu">
             <a href="@Url.Action("Index", "Home")" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Home") ? "active" : "")">Home</a>
-            <a asp-controller="Projects" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Projects") ? "active" : "")">Projects</a>
+                <a asp-controller="Reflections" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Reflections") ? "active" : "")">Reflections</a>
             <a asp-controller="Skills" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Skills") ? "active" : "")">Skills</a>
             <a asp-controller="AboutMe" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "AboutMe") ? "active" : "")">About Me</a>
         </div>

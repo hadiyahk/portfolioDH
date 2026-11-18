@@ -2,7 +2,7 @@
 
 namespace Portfolio.Controllers
 {
-    public class ProjectsController : Controller
+    public class ReflectionsController : Controller
     {
         public IActionResult Index()
         {

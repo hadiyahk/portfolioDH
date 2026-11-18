@@ -1,0 +1,625 @@
+﻿﻿
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<style>
+
+    .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 200px;
+        gap: 100px;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        z-index: 2;
+    }
+
+        .hero-content h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .hero-content p {
+            position: relative;
+            padding-left: 10px;
+        }
+
+            .hero-content p:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 4px;
+                background-color: #FFD700;
+            }
+
+
+
+    .hero-video {
+        flex: 2;
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.2em;
+            position: relative;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+            .navbar a:hover {
+                color: #B2FFFF;
+            }
+
+            .navbar a:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background-color: #B2FFFF;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .navbar a:hover:before {
+                transform: scaleX(1);
+            }
+
+        .navbar .active {
+            color: #B2FFFF;
+            font-weight: bold;
+        }
+
+            .navbar .active:before {
+                transform: scaleX(1);
+            }
+
+
+    section {
+        padding: 40px;
+        margin: 20px auto;
+        max-width: 1100px;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    h2 {
+        color: white;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: lightblue;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        color: white;
+    }
+
+
+
+
+    .project-section {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    /* Text on left, photos on right */
+    .artifact-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    /* Text takes up most of the space */
+    .artifact-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Photos stay small on the right */
+    .artifact-images {
+        flex: 0 0 180px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+        /* Override the original large photo container */
+        .artifact-images .artifact-photo {
+            width: 100%;
+            max-width: 180px;
+            min-height: 0;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: none;
+        }
+
+            /* Small, proportional photos */
+            .artifact-images .artifact-photo img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                object-fit: contain;
+            }
+
+    /* Mobile responsiveness */
+    @@media (max-width: 768px) {
+        .artifact-flex {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .artifact-images {
+            flex-basis: auto;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .artifact-images .artifact-photo {
+                width: 140px;
+            }
+    }
+
+
+</style>
+
+
+
+
+<div class="hero-section">
+
+    <div class="hero-content" data-aos="fade-down">
+        <h1>Refelctions</h1>
+        <p>Check out my featured artifacts and see the reflections of my work.</p>
+        <div style="padding-top: 20px;">
+            <a class="btn btn-custom" href="#refelctions">Explore Refelctions</a>
+        </div>
+
+    </div>
+
+    <video autoplay loop muted class="hero-video">
+        <source src="~/tooth_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="navbar">
+    <a href="javascript:void(0);" onclick="filterRefelctions('all')" class="active">All</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('Instruments')">Machine Learning</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('Dental-Anatomy')">Data Analysis</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('Radiography')">Web Development</a>
+</div>
+
+
+<!-- INSTRUMENTATION -->
+
+<div id="refelctions" style="padding-bottom: 100px;">
+
+    <section class="reflection-section instrumentation active"
+             data-aos="fade-up">
+
+        <h1>Instrumentation</h1>
+
+
+        <!-- H6/7 ARTIFACT -->
+
+        <div class="artifact-card">
+
+            <h2>Artifact: H6/7 Sickle Scaler</h2>
+
+            <div class="artifact-flex">
+
+                <!-- LEFT SIDE: DESCRIPTION AND REFLECTION -->
+
+                <div class="artifact-content">
+
+                    <div class="instrument-description">
+
+                        <h3>Instrument Description</h3>
+
+                        <p>
+                            The H6/7 is an anterior sickle scaler used
+                            for supragingival calculus removal on
+                            anterior teeth, including facial, lingual,
+                            and interproximal surfaces. It has a sharp,
+                            pointed tip and a 90-degree face-to-lower-shank
+                            design. Because of its pointed tip, the
+                            instrument is inserted at the line angle
+                            rather than the midline to avoid
+                            traumatizing the surrounding soft tissue.
+                        </p>
+
+                    </div>
+
+
+                    <h3>Reflection:</h3>
+
+                    <div class="reflection-text">
+
+                        <p>
+                            During my simulated H6/7 test, I struggled
+                            mainly with ergonomics, grasp, and speed.
+                            I had difficulty positioning the client's
+                            head without bending my wrists, and my
+                            instrument would sometimes slip past my
+                            second knuckle. I was also working too
+                            quickly, which affected my control.
+                        </p>
+
+                        <p>
+                            My clinician recommended slowing down and
+                            raising the client chair. During a later
+                            Gracey 1/2 demonstration, I learned that
+                            the client's jaw should be aligned with
+                            my belly button, depending on whether
+                            I was working on the maxillary or
+                            mandibular arch.
+                        </p>
+
+                        <p>
+                            Once I corrected the client positioning,
+                            slowed down, and maintained my grasp,
+                            I was able to fix the issues I had
+                            experienced during the simulation.
+                            The H6/7 became the instrument I felt
+                            most comfortable using because I finally
+                            understood what I had been doing wrong
+                            and how to correct it. Using the
+                            1-2-3 pivot technique also helped me
+                            maintain a controlled pace and prevent
+                            slipping during my strokes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: H6/7 PHOTO -->
+
+                <div class="artifact-images">
+
+                    <div class="artifact-photo">
+                        <img src="~/h67.png"
+                             alt="H6/7 Instrumentation Artifact">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 204S ARTIFACT -->
+
+        <div class="artifact-card">
+
+            <h2>Artifact: 204S Sickle Scaler</h2>
+
+            <div class="artifact-flex">
+
+                <!-- LEFT SIDE: DESCRIPTION AND REFLECTION -->
+
+                <div class="artifact-content">
+
+                    <div class="instrument-description">
+
+                        <h3>Instrument Description</h3>
+
+                        <p>
+                            The 204S is a posterior sickle scaler
+                            used for supragingival calculus removal,
+                            particularly on the interproximal
+                            surfaces of posterior teeth.
+                            It has a triangular cross-section,
+                            a sharp pointed tip, two cutting edges
+                            on each working end, and a 90-degree
+                            face-to-lower-shank relationship.
+                        </p>
+
+                    </div>
+
+
+                    <h3>Reflection:</h3>
+
+                    <div class="reflection-text">
+
+                        <p>
+                            During my simulated 204S test, I struggled
+                            with maintaining a stable fulcrum,
+                            identifying the correct working end
+                            for quadrant one buccal, and client
+                            positioning. My fulcrum positioning
+                            was particularly difficult because
+                            I was not always resting on the
+                            correct part of my finger.
+                        </p>
+
+                        <p>
+                            My clinician pointed out that the client
+                            chair was too low and recommended
+                            positioning the client at tummy level.
+                            I was also advised to stand up more
+                            to improve my fulcrum, make smaller
+                            hand movements, and ensure that the
+                            instrument was in contact at the
+                            corner of the tooth before pivoting.
+                        </p>
+
+                        <p>
+                            By the time my test came around,
+                            I had corrected almost all of the
+                            challenges from my simulation except
+                            for my fulcrum. After attending
+                            skills development and practising,
+                            I realized that I needed to make
+                            a slight adjustment to my position.
+                            This helped me correct my fulcrum
+                            and improve my control of the instrument.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: 204S PHOTO -->
+
+                <div class="artifact-images">
+
+                    <div class="artifact-images">
+
+                        <div class="artifact-photo">
+                            <img src="~/204s.png"
+                                 alt="204s Instrumentation Artifact">
+                        </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+    <!-- DENTAL ANATOMY -->
+
+
+    <section class="reflection-section dental-anatomy active"
+             data-aos="fade-up">
+
+        <h1>Dental Anatomy</h1>
+
+
+        <!-- TOOTH PROJECT -->
+
+        <div class="artifact-card">
+
+            <h2>Artifact: Tooth Project</h2>
+
+
+            <!-- TOOTH PROJECT -->
+
+            <div class="artifact-card">
+
+                <h2>Artifact: Tooth Project</h2>
+
+                <div class="artifact-flex">
+
+                    <!-- LEFT SIDE: REFLECTION -->
+                    <div class="artifact-content">
+
+                        <h3>Reflection:</h3>
+
+                        <div class="reflection-text">
+                            <p>
+                                For our Dental Anatomy project, my partner and I
+                                worked together to create tooth models out of clay.
+                                I was responsible for making a molar, while my
+                                partner created an incisor. Once we finished
+                                sculpting our teeth, I labelled the anatomical
+                                landmarks and elevations as part of the assignment.
+                            </p>
+
+                            <p>
+                                One of the challenges I experienced was making
+                                sure the molar's anatomical features were accurately
+                                represented. Sculpting the tooth helped me better
+                                understand its three-dimensional structure and
+                                how the different landmarks relate to one another.
+                            </p>
+
+                            <p>
+                                This project helped me connect what I learned
+                                in class to something I could physically create
+                                and examine. Overall, I found this assignment
+                                helpful in strengthening my understanding of
+                                dental anatomy.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT SIDE: PHOTOS -->
+                    <div class="artifact-images">
+
+                        <div class="artifact-photo">
+                            <img src="~/dental image 1.png"
+                                 alt="Molar clay model">
+                        </div>
+
+                        <div class="artifact-photo">
+                            <img src="~/dental image 2.png"
+                                 alt="Incisor clay model">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+           
+            <h3>Reflection:</h3>
+
+            <div class="reflection-text">
+                <p>
+                    For our Dental Anatomy project, my partner and I worked together to create tooth models out of clay. I was responsible for making a molar, while my partner created an incisor. Once we finished sculpting our teeth, I labelled the anatomical landmarks and elevations as part of the assignment.
+
+                    One of the challenges I experienced was making sure the molar's anatomical features were accurately represented. Sculpting the tooth helped me better understand its three-dimensional structure and how the different landmarks relate to one another.
+
+                    This project helped me connect what I learned in class to something I could physically create and examine. It also made identifying the anatomical landmarks easier because
+                    
+                    I had to think about their shapes, positions, and relationships while
+                    building the model. Overall, I found this assignment helpful
+                    in strengthening my understanding of dental anatomy.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RADIOGRAPHS -->
+
+    <section class="reflection-section radiographs active"
+             data-aos="fade-up">
+
+        <h1>Radiographs</h1>
+
+
+        <!-- RADIOGRAPH 1 -->
+
+        <div class="artifact-card">
+
+            <h2>Radiograph 1</h2>
+
+            <h3>Photo:</h3>
+
+            <div class="artifact-photo">
+                <span>Radiograph 1 Photo Placeholder</span>
+            </div>
+
+            <h3>Reflection:</h3>
+
+            <div class="reflection-text">
+                <p>
+                    [Add your Radiograph 1 reflection here.]
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- RADIOGRAPH 2 -->
+
+        <div class="artifact-card">
+
+            <h2>Radiograph 2</h2>
+
+            <h3>Photo:</h3>
+
+            <div class="artifact-photo">
+                <span>Radiograph 2 Photo Placeholder</span>
+            </div>
+
+            <h3>Reflection:</h3>
+
+            <div class="reflection-text">
+                <p>
+                    [Add your Radiograph 2 reflection here.]
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+
+
+    function filterRefelctions(category) {
+        const allReflections = document.querySelectorAll('.project-section');
+        const allLinks = document.querySelectorAll('.navbar a');
+        
+
+        allLinks.forEach(link => link.classList.remove('active'));
+
+
+        const clickedLink = Array.from(allLinks).find(link => link.textContent.toLowerCase() === category.replace('-', ' '));
+        if (clickedLink) clickedLink.classList.add('active');
+
+
+        allReflections.forEach(refelctions => {
+            if (category === 'all' || refelctions.classList.contains(category)) {
+                refelctions.classList.add('active');
+                AOS.refresh();
+            } else {
+                refelctions.classList.remove('active');
+            }
+        });
+    }
+
+
+    filterRefelctions('all');
+</script>
