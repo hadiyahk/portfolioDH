@@ -1,222 +1,360 @@
-﻿﻿
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
+﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 <style>
+    /* A single responsive stylesheet replaces the conflicting old rules. */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
     .hero-section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 200px;
-        gap: 100px;
+        gap: 60px;
+        margin-bottom: 120px;
+        width: 100%;
+        min-width: 0;
     }
 
     .hero-content {
-        flex: 1;
+        flex: 1 1 0;
+        min-width: 0;
         text-align: left;
+        position: relative;
         z-index: 2;
     }
 
         .hero-content h1 {
-            font-size: 3em;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: bold;
+            color: white;
         }
 
         .hero-content p {
             position: relative;
-            padding-left: 10px;
+            padding-left: 14px;
+            color: white;
+            line-height: 1.7;
         }
 
-            .hero-content p:before {
+            .hero-content p::before {
                 content: '';
                 position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
+                inset: 0 auto 0 0;
                 width: 4px;
-                background-color: #FFD700;
+                background: #FFD700;
             }
 
-
-
     .hero-video {
-        flex: 2;
+        flex: 1 1 0;
         width: 50%;
-        height: 50%;
-        object-fit: cover;
+        max-width: 100%;
+        height: auto;
         border-radius: 10px;
+        object-fit: cover;
     }
-
-
-
 
     .navbar {
         display: flex;
         justify-content: center;
-        margin: 20px 0;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin: 20px auto 30px;
+        padding: 0 12px;
+        width: 100%;
+        max-width: 100%;
     }
 
         .navbar a {
+            color: white;
             text-decoration: none;
-            color: #fff;
-            padding: 10px 20px;
-            margin: 0 15px;
-            font-size: 1.2em;
             position: relative;
-            font-weight: 400;
-            transition: all 0.3s ease;
+            padding: 10px 12px;
+            font-size: 1.1rem;
+            transition: color .2s ease;
         }
 
-            .navbar a:hover {
+            .navbar a:hover, .navbar a.active {
                 color: #B2FFFF;
             }
 
-            .navbar a:before {
+            .navbar a::after {
                 content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #B2FFFF;
+                background: #B2FFFF;
                 transform: scaleX(0);
-                transition: transform 0.3s ease;
+                transition: transform .2s ease;
             }
 
-            .navbar a:hover:before {
+            .navbar a:hover::after, .navbar a.active::after {
                 transform: scaleX(1);
             }
 
-        .navbar .active {
-            color: #B2FFFF;
-            font-weight: bold;
+    #reflections {
+        width: min(1100px, calc(100vw - 32px));
+        max-width: calc(100vw - 32px);
+        min-width: 0;
+        margin: 0 auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+        #reflections > .reflection-section {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            margin: 0 auto 45px;
+            padding: 30px 20px;
         }
 
-            .navbar .active:before {
-                transform: scaleX(1);
+            #reflections > .reflection-section:not(.active) {
+                display: none;
             }
 
-
-    section {
-        padding: 40px;
-        margin: 20px auto;
-        max-width: 1100px;
-    }
-
-    h1 {
+    .reflection-section h1 {
+        margin: 0 0 35px;
+        font-size: 2.25rem;
         color: white;
     }
 
-    h2 {
+    .reflection-section h2 {
+        margin: 0 0 18px;
+        font-size: 1.7rem;
         color: white;
-        font-size: 2em;
-        margin-bottom: 10px;
     }
 
-    h3 {
+    .reflection-section h3 {
+        margin: 22px 0 12px;
+        font-size: 1.35rem;
         color: lightblue;
-        font-size: 2em;
-        margin-bottom: 10px;
     }
 
-    p {
-        font-size: 1.1em;
-        margin-bottom: 20px;
+    .reflection-section p {
         color: white;
+        line-height: 1.8;
+        margin: 0 0 18px;
+        font-size: 1.05rem;
     }
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-        color: white;
+    .artifact-card {
+        width: 100%;
+        min-width: 0;
+        padding: 30px;
+        margin-bottom: 35px;
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.15);
+        border-radius: 12px;
     }
 
-
-
-
-    .project-section {
-        display: none;
-    }
-
-    .active {
-        display: block;
-    }
-
-    /* Text on left, photos on right */
     .artifact-flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 60px;
-    }
-
-    /* Text takes up most of the space */
-    .artifact-content {
-        flex: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 35px;
+        align-items: start;
+        width: 100%;
         min-width: 0;
     }
 
-    /* Photos stay small on the right */
+    .artifact-content, .instrument-description, .reflection-text {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .reflection-text {
+        padding: 20px;
+        border-left: 4px solid #FFD700;
+        border-radius: 0 8px 8px 0;
+        background: rgba(255,255,255,.05);
+    }
+
+        .reflection-text p:last-child {
+            margin-bottom: 0;
+        }
+
     .artifact-images {
-        flex: 0 0 180px;
+        width: 100%;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         gap: 15px;
         align-items: center;
     }
 
-        /* Override the original large photo container */
         .artifact-images .artifact-photo {
             width: 100%;
-            max-width: 180px;
+            max-width: 340px;
             min-height: 0;
-            margin: 0;
             padding: 0;
-            border: none;
-            background: none;
+            margin: 0;
+            border: 0;
+            background: transparent;
         }
 
-            /* Small, proportional photos */
             .artifact-images .artifact-photo img {
+                display: block;
                 width: 100%;
                 height: auto;
-                border-radius: 10px;
+                aspect-ratio: 4 / 3;
                 object-fit: contain;
+                border-radius: 10px;
             }
 
-    /* Mobile responsiveness */
-    @@media (max-width: 768px) {
-        .artifact-flex {
+    /* Tablet + phone: wide readable paragraphs, photos below the text. */
+    @@media (max-width: 1399px) {
+        .hero-section {
             flex-direction: column;
-            gap: 25px;
+            align-items: stretch;
+            gap: 28px;
+            margin-bottom: 65px;
+            padding: 10px;
         }
 
-        .artifact-images {
-            flex-basis: auto;
+        .hero-content, .hero-video {
             width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex: none;
+            max-width: 100%;
         }
 
-            .artifact-images .artifact-photo {
-                width: 140px;
+        .hero-video {
+            max-height: 320px;
+        }
+
+        #reflections {
+            width: calc(100vw - 32px);
+            max-width: 1100px;
+            margin: 0;
+        }
+
+            #reflections > .reflection-section {
+                padding: 20px 16px;
             }
+
+        .artifact-card {
+            padding: 22px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .artifact-flex, .radiographs .artifact-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 22px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .artifact-content, .radiographs .artifact-content,
+        .reflection-text, .radiographs .reflection-text {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            flex: none;
+        }
+
+        .artifact-images, .radiographs .artifact-images,
+        .artifact-flex > .artifact-images {
+            display: flex;
+            flex: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 100%;
+            gap: 16px;
+        }
+
+            .artifact-images .artifact-photo, .radiographs .artifact-images .artifact-photo {
+                width: min(100%, 340px);
+                max-width: 340px;
+            }
+
+        .reflection-section p, .reflection-text p, .instrument-description p {
+            width: 100%;
+            max-width: none;
+            font-size: 1.16rem;
+            line-height: 1.8;
+            overflow-wrap: break-word;
+            word-break: normal;
+        }
+
+        .reflection-section h1 {
+            font-size: 2.25rem;
+        }
+
+        .reflection-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .reflection-section h3 {
+            font-size: 1.4rem;
+        }
     }
 
+    @@media (max-width: 600px) {
+        .hero-section {
+            gap: 20px;
+            margin-bottom: 35px;
+        }
 
+        .navbar {
+            gap: 4px 8px;
+        }
+
+            .navbar a {
+                padding: 8px;
+                font-size: .95rem;
+            }
+
+        #reflections {
+            width: calc(100vw - 20px);
+            max-width: calc(100vw - 20px);
+        }
+
+            #reflections > .reflection-section {
+                padding: 14px 8px;
+            }
+
+        .artifact-card {
+            padding: 16px;
+        }
+
+        .reflection-text {
+            padding: 16px;
+        }
+
+            .reflection-section p, .reflection-text p, .instrument-description p {
+                font-size: 1.08rem;
+                line-height: 1.75;
+            }
+
+        .reflection-section h1 {
+            font-size: 1.9rem;
+        }
+
+        .reflection-section h2 {
+            font-size: 1.45rem;
+        }
+
+        .reflection-section h3 {
+            font-size: 1.25rem;
+        }
+    }
 </style>
-
-
-
 
 <div class="hero-section">
 
     <div class="hero-content" data-aos="fade-down">
-        <h1>Refelctions</h1>
+        <h1>Reflections</h1>
         <p>Check out my featured artifacts and see the reflections of my work.</p>
         <div style="padding-top: 20px;">
-            <a class="btn btn-custom" href="#refelctions">Explore Refelctions</a>
+            <a class="btn btn-custom" href="#reflections">Explore Reflections</a>
         </div>
 
     </div>
@@ -227,18 +365,18 @@
     </video>
 </div>
 
+
 <div class="navbar">
-    <a href="javascript:void(0);" onclick="filterRefelctions('all')" class="active">All</a>
-    <a href="javascript:void(0);" onclick="filterRefelctions('Instruments')">Machine Learning</a>
-    <a href="javascript:void(0);" onclick="filterRefelctions('Dental-Anatomy')">Data Analysis</a>
-    <a href="javascript:void(0);" onclick="filterRefelctions('Radiography')">Web Development</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('all', this)" class="active">All</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('instrumentation', this)">Instruments</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('dental-anatomy', this)">Dental Anatomy</a>
+    <a href="javascript:void(0);" onclick="filterRefelctions('radiographs', this)">Radiography</a>
 </div>
 
 
-<!-- INSTRUMENTATION -->
 
-<div id="refelctions" style="padding-bottom: 100px;">
 
+<div id="reflections" style="padding-bottom: 100px;">
     <section class="reflection-section instrumentation active"
              data-aos="fade-up">
 
@@ -410,130 +548,74 @@
 
 
                 <!-- RIGHT SIDE: 204S PHOTO -->
-
                 <div class="artifact-images">
-
-                    <div class="artifact-images">
-
-                        <div class="artifact-photo">
-                            <img src="~/204s.png"
-                                 alt="204s Instrumentation Artifact">
-                        </div>
-
+                    <div class="artifact-photo">
+                        <img src="~/204s.png" alt="204S Instrumentation Artifact">
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-
+            </div> <!-- artifact-flex -->
+        </div> <!-- artifact-card -->
     </section>
-
-</div>
-
-
 
     <!-- DENTAL ANATOMY -->
-
-
-    <section class="reflection-section dental-anatomy active"
-             data-aos="fade-up">
-
+    <section class="reflection-section dental-anatomy active" data-aos="fade-up">
         <h1>Dental Anatomy</h1>
-
-
-        <!-- TOOTH PROJECT -->
-
         <div class="artifact-card">
-
             <h2>Artifact: Tooth Project</h2>
+            <div class="artifact-flex">
 
+                <!-- LEFT SIDE: REFLECTION -->
+                <div class="artifact-content">
 
-            <!-- TOOTH PROJECT -->
+                    <h3>Reflection:</h3>
 
-            <div class="artifact-card">
+                    <div class="reflection-text">
+                        <p>
+                            For our Dental Anatomy project, my partner and I
+                            worked together to create tooth models out of clay.
+                            I was responsible for making a molar, while my
+                            partner created an incisor. Once we finished
+                            sculpting our teeth, I labelled the anatomical
+                            landmarks and elevations as part of the assignment.
+                        </p>
 
-                <h2>Artifact: Tooth Project</h2>
+                        <p>
+                            One of the challenges I experienced was making
+                            sure the molar's anatomical features were accurately
+                            represented. Sculpting the tooth helped me better
+                            understand its three-dimensional structure and
+                            how the different landmarks relate to one another.
+                        </p>
 
-                <div class="artifact-flex">
-
-                    <!-- LEFT SIDE: REFLECTION -->
-                    <div class="artifact-content">
-
-                        <h3>Reflection:</h3>
-
-                        <div class="reflection-text">
-                            <p>
-                                For our Dental Anatomy project, my partner and I
-                                worked together to create tooth models out of clay.
-                                I was responsible for making a molar, while my
-                                partner created an incisor. Once we finished
-                                sculpting our teeth, I labelled the anatomical
-                                landmarks and elevations as part of the assignment.
-                            </p>
-
-                            <p>
-                                One of the challenges I experienced was making
-                                sure the molar's anatomical features were accurately
-                                represented. Sculpting the tooth helped me better
-                                understand its three-dimensional structure and
-                                how the different landmarks relate to one another.
-                            </p>
-
-                            <p>
-                                This project helped me connect what I learned
-                                in class to something I could physically create
-                                and examine. Overall, I found this assignment
-                                helpful in strengthening my understanding of
-                                dental anatomy.
-                            </p>
-                        </div>
-
+                        <p>
+                            This project helped me connect what I learned
+                            in class to something I could physically create
+                            and examine. Overall, I found this assignment
+                            helpful in strengthening my understanding of
+                            dental anatomy.
+                        </p>
                     </div>
 
-                    <!-- RIGHT SIDE: PHOTOS -->
-                    <div class="artifact-images">
+                </div>
 
-                        <div class="artifact-photo">
-                            <img src="~/dental image 1.png"
-                                 alt="Molar clay model">
-                        </div>
+                <!-- RIGHT SIDE: PHOTOS -->
+                <div class="artifact-images">
 
-                        <div class="artifact-photo">
-                            <img src="~/dental image 2.png"
-                                 alt="Incisor clay model">
-                        </div>
+                    <div class="artifact-photo">
+                        <img src="~/dental image 1.png"
+                             alt="Molar clay model">
+                    </div>
 
+                    <div class="artifact-photo">
+                        <img src="~/dental image 2.png"
+                             alt="Incisor clay model">
                     </div>
 
                 </div>
 
             </div>
-
-
-
-
-           
-            <h3>Reflection:</h3>
-
-            <div class="reflection-text">
-                <p>
-                    For our Dental Anatomy project, my partner and I worked together to create tooth models out of clay. I was responsible for making a molar, while my partner created an incisor. Once we finished sculpting our teeth, I labelled the anatomical landmarks and elevations as part of the assignment.
-
-                    One of the challenges I experienced was making sure the molar's anatomical features were accurately represented. Sculpting the tooth helped me better understand its three-dimensional structure and how the different landmarks relate to one another.
-
-                    This project helped me connect what I learned in class to something I could physically create and examine. It also made identifying the anatomical landmarks easier because
-                    
-                    I had to think about their shapes, positions, and relationships while
-                    building the model. Overall, I found this assignment helpful
-                    in strengthening my understanding of dental anatomy.
-                </p>
-            </div>
-
-        </div>
-
+        </div> <!-- artifact-card -->
     </section>
-
-
 
     <!-- RADIOGRAPHS -->
 
@@ -543,83 +625,154 @@
         <h1>Radiographs</h1>
 
 
-        <!-- RADIOGRAPH 1 -->
+        <!-- RADIOGRAPH 1: INITIAL ATTEMPT -->
 
         <div class="artifact-card">
 
-            <h2>Radiograph 1</h2>
+            <h2>Radiograph 1: Premolar Bitewing — Initial Attempt</h2>
 
-            <h3>Photo:</h3>
+            <div class="artifact-flex">
 
-            <div class="artifact-photo">
-                <span>Radiograph 1 Photo Placeholder</span>
-            </div>
+                <!-- LEFT SIDE: REFLECTION -->
 
-            <h3>Reflection:</h3>
+                <div class="artifact-content">
 
-            <div class="reflection-text">
-                <p>
-                    [Add your Radiograph 1 reflection here.]
-                </p>
+                    <h3>Reflection:</h3>
+
+                    <div class="reflection-text">
+
+                        <p>
+                            During my first attempt at taking a premolar
+                            bitewing radiograph, I struggled with achieving
+                            the correct positioning and horizontal
+                            angulation. Looking at the radiograph, I noticed
+                            some overlapping of the interproximal contacts,
+                            which made it harder to clearly distinguish
+                            the spaces between the teeth. This suggested
+                            that the X-ray beam was not properly aligned
+                            through the contacts.
+                        </p>
+
+                        <p>
+                            Although I was able to capture the premolar
+                            region, the overlapping showed me that I needed
+                            to pay closer attention to the alignment of
+                            the PID and receptor. This attempt helped me
+                            understand how even a slight change in
+                            horizontal angulation can affect the diagnostic
+                            quality of a radiograph.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: RADIOGRAPH PHOTO -->
+
+                <div class="artifact-images">
+
+                    <div class="artifact-photo">
+
+                        <img src="~/incorrect x ray.png"
+                             alt="Initial premolar bitewing radiograph showing overlapping contacts">
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
 
-        <!-- RADIOGRAPH 2 -->
+
+        <!-- RADIOGRAPH 2: CORRECTED ATTEMPT -->
 
         <div class="artifact-card">
 
-            <h2>Radiograph 2</h2>
+            <h2>Radiograph 2: Premolar Bitewing — Corrected Attempt</h2>
 
-            <h3>Photo:</h3>
+            <div class="artifact-flex">
 
-            <div class="artifact-photo">
-                <span>Radiograph 2 Photo Placeholder</span>
-            </div>
+                <!-- LEFT SIDE: REFLECTION -->
 
-            <h3>Reflection:</h3>
+                <div class="artifact-content">
 
-            <div class="reflection-text">
-                <p>
-                    [Add your Radiograph 2 reflection here.]
-                </p>
+                    <h3>Reflection:</h3>
+
+                    <div class="reflection-text">
+
+                        <p>
+                            For my second attempt, I focused on correcting
+                            the positioning and horizontal angulation to
+                            improve the image. Comparing the two radiographs,
+                            I can see an improvement in the visibility of
+                            the posterior teeth and their interproximal
+                            areas.
+                        </p>
+
+                        <p>
+                            I was happy with how much better the second
+                            radiograph turned out because I was able to
+                            recognize an issue with my first attempt and
+                            make adjustments. Although there is still some
+                            minor overlapping visible, the second image
+                            demonstrates improvement in my technique.
+                        </p>
+
+                        <p>
+                            This experience helped me better understand
+                            the importance of proper receptor placement,
+                            PID alignment, and horizontal angulation when
+                            taking bitewing radiographs. It also showed
+                            me that evaluating my own radiographs is an
+                            important part of developing my clinical skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: RADIOGRAPH PHOTO -->
+
+                <div class="artifact-images">
+
+                    <div class="artifact-photo">
+
+                        <img src="~/correct x ray.png"
+                             alt="Corrected premolar bitewing radiograph with improved positioning">
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
-
 </div>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init();
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 700, once: true });
+        }
+        filterRefelctions('all');
+    });
 
-
-    function filterRefelctions(category) {
-        const allReflections = document.querySelectorAll('.project-section');
-        const allLinks = document.querySelectorAll('.navbar a');
-        
-
-        allLinks.forEach(link => link.classList.remove('active'));
-
-
-        const clickedLink = Array.from(allLinks).find(link => link.textContent.toLowerCase() === category.replace('-', ' '));
-        if (clickedLink) clickedLink.classList.add('active');
-
-
-        allReflections.forEach(refelctions => {
-            if (category === 'all' || refelctions.classList.contains(category)) {
-                refelctions.classList.add('active');
-                AOS.refresh();
-            } else {
-                refelctions.classList.remove('active');
-            }
+    function filterRefelctions(category, clickedLink = null) {
+        const sections = document.querySelectorAll('#reflections > .reflection-section');
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach(link => link.classList.remove('active'));
+        (clickedLink || links[0])?.classList.add('active');
+        sections.forEach(section => {
+            const show = category === 'all' || section.classList.contains(category);
+            section.classList.toggle('active', show);
+            section.style.display = show ? 'block' : 'none';
         });
+        if (typeof AOS !== 'undefined') AOS.refreshHard();
     }
-
-
-    filterRefelctions('all');
 </script>

@@ -2,320 +2,845 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" style="padding-bottom: 100px;">
+<!-- DENTAL HYGIENE CAROUSEL -->
+
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+
     <div class="carousel-inner">
 
+        <!-- SLIDE 1: INSTRUMENTATION -->
+
         <div class="carousel-item active">
-            <div class="row">
+            <div class="row align-items-center">
+
                 <div class="col-md-6">
-                    <h3 class="animate">Temperature Prediction Using Machine Learning</h3>
-                    <p class="animate"><strong>Technology Used:</strong> Python, Matplotlib</p>
-                    <p class="animate">This award-winning project utilizes machine learning models to analyze IoT data from industrial refrigerators, predicting temperature trends and triggering alerts for deviations beyond safe thresholds.</p>
+                    <h3 class="animate">Instrumentation</h3>
+
+                    <p class="animate">
+                        Dental Hygiene student Level 1
+                    </p>
                 </div>
+
                 <div class="col-md-6">
-                    <video class="animate" autoplay loop muted>
-                        <source src="temp.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img src="~/IMG_4226.jpeg"
+                         class="animate dental-carousel-img"
+                         alt="Dental Hygiene student">
                 </div>
+
             </div>
         </div>
+
+
+        <!-- SLIDE 2: DENTAL ANATOMY -->
 
         <div class="carousel-item">
-            <div class="row">
+            <div class="row align-items-center">
+
                 <div class="col-md-6">
-                    <h3 class="animate">Fan Club Web App with ASP.NET</h3>
-                    <p class="animate"><strong>Technology Used:</strong> ASP.NET Core, C#</p>
-                    <p class="animate">Designed and developed a dynamic Fan Club Web App, featuring user management and subscription functionality, showcasing expertise in ASP.NET Core and Entity Framework.</p>
+                    <h3 class="animate">Dental Hygiene Level 1 Students</h3>
+
+                    <p class="animate">
+                    </p>
                 </div>
+
                 <div class="col-md-6">
-                    <video class="animate" autoplay loop muted>
-                        <source src="fanclub.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img src="~/IMG_4227.jpeg"
+                         class="animate dental-carousel-img"
+                         alt="Dental Hygiene students">
                 </div>
+
             </div>
         </div>
+
+
+        <!-- SLIDE 3: RADIOGRAPHY -->
 
         <div class="carousel-item">
-            <div class="row">
+            <div class="row align-items-center">
+
                 <div class="col-md-6">
-                    <h3 class="animate">Snake Game Using JavaFX</h3>
-                    <p class="animate"><strong>Technology Used:</strong> Java, JavaFX</p>
-                    <p class="animate">Developed an interactive Snake game using JavaFX. The game demonstrates proficiency in object-oriented programming and event-driven design.</p>
+                    <h3 class="animate">Radiograph software</h3>
+
+                    <p class="animate">
+                        Sopro Software to view my radiographs at home!
+                    </p>
                 </div>
+
                 <div class="col-md-6">
-                    <video class="animate" autoplay loop muted>
-                        <source src="gameplay.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img src="~/radiographs.png"
+                         class="animate dental-carousel-img"
+                         alt="Dental radiographs">
                 </div>
+
             </div>
         </div>
 
 
+        <!-- SLIDE 4: RADIOGRAPHY -->
+
+        <div class="carousel-item">
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+                    <h3 class="animate">Personal Practice Instruments</h3>
+
+                    <p class="animate">
+                        perosnal Instruemnts bought to practice at home!
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="~/IMG_4230.jpeg"
+                         class="animate dental-carousel-img"
+                         alt="Instruments">
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <!-- PREVIOUS BUTTON -->
+
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"
+              aria-hidden="true"></span>
+
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+
+    <!-- NEXT BUTTON -->
+
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"
+              aria-hidden="true"></span>
+
         <span class="visually-hidden">Next</span>
     </button>
 
+
+    <!-- LINK TO REFLECTIONS PAGE -->
+
     <div class="text-center my-4">
-        <a asp-controller="Projects" asp-action="Index" class="btn btn-custom">See All Projects</a>
+        <a asp-controller="Home"
+           asp-action="Reflections"
+           class="btn btn-custom">
+            Explore Reflections and Artifacts
+        </a>
     </div>
 
 </div>
 
+<!-- ==========================================
+     ABOUT ME - DENTAL HYGIENE STUDENT
+     ========================================== -->
 
+<section class="dh-about full-width">
 
+    <div class="dh-container text-center">
 
-<section class="full-width text-center" style="background-color: black; color: white; padding: 50px;">
-    <h2>About Me</h2>
-    <p style="padding: 30px;">I am a passionate developer with experience in building robust web applications and a love for solving complex problems.</p>
-    <a asp-controller="AboutMe" asp-action="Index" class="btn-custom">Learn More About Me</a>
+        <h2>My Journey in Dental Hygiene</h2>
+
+        <p>
+            I am currently a Level 1 Dental Hygiene student at
+            Algonquin College, where I am developing the scientific
+            knowledge, technical skills, and clinical foundations
+            needed to become a dental hygienist.
+        </p>
+
+        <p>
+            Through a combination of classroom learning,
+            laboratory practice, and hands-on clinical training,
+            I am learning how oral health connects to overall
+            health while developing the skills needed to provide
+            safe, effective, and client-centred care.
+        </p>
+
+        <a asp-controller="AboutMe"
+           asp-action="Index"
+           class="btn btn-custom">
+            Learn More About Me
+        </a>
+
+    </div>
+
 </section>
 
 
-<section class="full-width" style="background-color: white; ">
-    <h2 class="text-center">Here's What I Can Help You With</h2>
-    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Web Development</h4>
-                <p>I build responsive and scalable web applications using modern frameworks and best practices.</p>
-            </div>
+
+<!-- ==========================================
+     WHAT I'M STUDYING RIGHT NOW
+     ========================================== -->
+
+<section class="dh-studies full-width">
+
+    <div class="dh-container">
+
+        <div class="text-center dh-section-heading">
+
+            <h2>What I'm Studying Right Now</h2>
+
+            <p>
+                A look into my first semester of Dental Hygiene
+                at Algonquin College, from understanding the
+                human body to developing my first clinical skills.
+            </p>
+
         </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Agile Methodologies</h4>
-                <p>Experienced in Agile workflows, sprint planning, and delivering projects efficiently in a team environment.</p>
+
+
+        <!-- COURSE CARDS -->
+
+        <div class="dh-course-grid">
+
+
+            <!-- MICROBIOLOGY -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">BIO4335</span>
+
+                <h4>Microbiology</h4>
+
+                <p>
+                    Studying microorganisms, including bacteria,
+                    viruses, and fungi, and how they interact
+                    with the human body. This course also
+                    introduces the principles of infection
+                    prevention and control, microbial
+                    transmission, and methods of controlling
+                    microorganisms in clinical environments.
+                </p>
+
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Machine Learning</h4>
-                <p>I can design and train machine learning models to solve real-world problems using TensorFlow and Keras.</p>
+
+
+
+            <!-- PRECLINIC PRACTICUM -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">DEN4409</span>
+
+                <h4>Preclinic Practicum 1</h4>
+
+                <p>
+                    Developing hands-on dental hygiene skills
+                    through instrumentation practice.
+                    Learning modified pen grasp, fulcrums,
+                    adaptation, angulation, activation,
+                    ergonomics, and safe instrument handling
+                    using instruments such as Gracey curets
+                    and sickle scalers.
+                </p>
+
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Database Management</h4>
-                <p>Skilled in designing, optimizing, and managing relational databases with tools like MariaDB and SQL Server.</p>
+
+
+
+            <!-- PRECLINIC FOUNDATIONS -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">DEN4411</span>
+
+                <h4>Preclinic Practice Foundations 1</h4>
+
+                <p>
+                    Learning the theoretical foundations
+                    of dental hygiene practice, including
+                    professional responsibilities, client
+                    care, infection prevention, dental
+                    deposits, instrumentation principles,
+                    and the importance of maintaining
+                    a safe clinical environment.
+                </p>
+
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Cloud Computing</h4>
-                <p>Proficient in deploying, managing, and scaling applications on cloud platforms like AWS and Azure.</p>
+
+
+
+            <!-- DENTAL RADIOGRAPHY -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">DEN4453</span>
+
+                <h4>Dental Radiography</h4>
+
+                <p>
+                    Exploring the principles of X-ray
+                    production, radiation safety,
+                    radiographic techniques, and image
+                    quality. Developing an understanding
+                    of receptor positioning, horizontal
+                    and vertical angulation, and how
+                    to evaluate dental radiographs.
+                </p>
+
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>UI/UX Design</h4>
-                <p>Expert in creating intuitive and visually appealing interfaces that enhance user experience.</p>
+
+
+
+            <!-- DENTAL ANATOMY -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">DEN4300</span>
+
+                <h4>Dental Anatomy</h4>
+
+                <p>
+                    Learning to identify teeth and
+                    understand their anatomical features,
+                    morphology, eruption patterns,
+                    and functions. Studying dental
+                    terminology, tooth surfaces,
+                    anatomical landmarks, and differences
+                    between primary and permanent dentition.
+                </p>
+
             </div>
+
+
+
+            <!-- HUMAN ANATOMY AND PHYSIOLOGY -->
+
+            <div class="dh-course-card">
+
+                <span class="dh-course-code">BIO4323</span>
+
+                <h4>Human Anatomy and Physiology</h4>
+
+                <p>
+                    Studying the structure and function
+                    of the human body, including major
+                    body systems and their relationships.
+                    Developing an understanding of how
+                    the skeletal, muscular, nervous,
+                    cardiovascular, and other systems
+                    contribute to overall health.
+                </p>
+
+            </div>
+
         </div>
+
     </div>
 
 
-    <h2 class="text-center" style="padding-top: 50px; padding-bottom: 50px;">Take a look at my skillset!</h2>
-
-    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
+</section>
 
 
-        <div id="myCarousel" class="carousel slide" data-bs-ride="false">
+
+
+
+<!-- ==========================================
+     MY DENTAL HYGIENE INSTRUMENTS
+     ========================================== -->
+<section class="dh-instruments full-width">
+    <div class="dh-container">
+        <div class="text-center dh-section-heading">
+            <h2>Instruments I'm Learning to Use</h2>
+            <p>A look at the instruments I'm practising with in Preclinic Practicum 1.</p>
+        </div>
+
+        <div id="instrumentCarousel" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
 
+                <!-- SLIDE 1: GRACEY CURETS -->
                 <div class="carousel-item active">
-
-
-                    <h3 class="animate">Web Development</h3>
-                    <div class="animate">
-                        @await Html.PartialAsync("_WebDevelopment")
+                    <div class="instrument-slide">
+                        <h3>Gracey Curets</h3>
+                        <p>Area-specific curets used for subgingival instrumentation.</p>
+                        <div class="instrument-grid">
+                            <div class="instrument-card">
+                                <h4>Gracey 7/8</h4>
+                                <p>Posterior facial and lingual surfaces</p>
+                            </div>
+                            <div class="instrument-card">
+                                <h4>Gracey 11/12</h4>
+                                <p>Posterior mesial surfaces</p>
+                            </div>
+                            <div class="instrument-card">
+                                <h4>Gracey 13/14</h4>
+                                <p>Posterior distal surfaces</p>
+                            </div>
+                        </div>
                     </div>
-
-
-
                 </div>
-                <div class="carousel-item ">
 
-
-                    <h3 class="animate">Programming Languages</h3>
-                    <div class="animate">
-                        @await Html.PartialAsync("_ProgrammingLanguages")
+                <!-- SLIDE 2: SICKLE SCALERS -->
+                <div class="carousel-item">
+                    <div class="instrument-slide">
+                        <h3>Sickle Scalers</h3>
+                        <p>Instruments for supragingival calculus removal.</p>
+                        <div class="instrument-grid">
+                            <div class="instrument-card">
+                                <h4>H6/7</h4>
+                                <img src="~/h67.png" alt="H6/7 sickle scaler">
+                                <p>Anterior instrumentation</p>
+                            </div>
+                            <div class="instrument-card">
+                                <h4>204S</h4>
+                                <img src="~/204s.png" alt="204S sickle scaler">
+                                <p>Posterior instrumentation</p>
+                            </div>
+                        </div>
                     </div>
-
-
-
                 </div>
-                <div class="carousel-item ">
-
-
-                    <h3 class="animate">Databases</h3>
-                    <div class="animate">
-                        @await Html.PartialAsync("_Databases")
-                    </div>
-
-
-
-                </div>
-                <div class="carousel-item ">
-
-
-                    <h3 class="animate">Tools and Frameworks</h3>
-                    <div class="animate">@await Html.PartialAsync("_ToolsFrameworks")</div>
-
-
-
-                </div>
-
 
             </div>
 
-
-            <button class="skills-carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <i class="fas fa-chevron-left" style="color: black; font-size: 50px;"></i>
-                <span class="visually-hidden">Previous</span>
+            <button class="instrument-carousel-prev" type="button"
+                    data-bs-target="#instrumentCarousel" data-bs-slide="prev"
+                    aria-label="Previous instrument slide">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <button class="skills-carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <i class="fas fa-chevron-right" style="color: black; font-size: 50px;"></i>
-                <span class="visually-hidden">Next</span>
+            <button class="instrument-carousel-next" type="button"
+                    data-bs-target="#instrumentCarousel" data-bs-slide="next"
+                    aria-label="Next instrument slide">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
             </button>
         </div>
-
     </div>
 
-
-    <div class="text-center" style="padding-bottom: 50px;"><a asp-controller="Skills" asp-action="Index" class="btn btn-custom" style="mix-blend-mode: difference;">See All Skills</a></div>
+    <div class="text-center my-4">
+        <a asp-controller="Home"
+           asp-action="Skills"
+           class="btn btn-custom">
+            Explore Instruments in detail!
+        </a>
+    </div>
 
 </section>
 
+<!-- DENTAL HYGIENE PAGE STYLING -->
 <style>
-    #myCarousel .carousel-inner .carousel-item {
-        margin-left: -100%;
-        height: 700px;
+
+
+    /* SHARED LAYOUT */
+
+    /* Break out of the Bootstrap .container in _Layout.cshtml.
+                   Keep your original full-width sections without a layout rewrite. */
+    .dh-about.full-width,
+    .dh-studies.full-width,
+    .dh-instruments.full-width {
+        position: relative;
+        left: 50%;
+        right: auto;
+        width: 100vw;
+        max-width: none;
+        margin-left: -50vw;
+        margin-right: 0;
+        padding: 75px 24px;
+        box-sizing: border-box;
+    }
+
+    /* Prevent viewport-wide sections creating horizontal scrolling. */
+    body {
+        overflow-x: clip;
+    }
+
+    .dh-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .dh-section-heading {
+        margin-bottom: 45px;
+    }
+
+        .dh-section-heading h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .dh-section-heading p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+
+    /* ABOUT ME */
+
+    .dh-about {
+        background-color: #080D20;
+        color: white;
+    }
+
+        .dh-about h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .dh-about p {
+            color: white;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto 25px;
+        }
+
+        .dh-about .btn-custom {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+
+    /* CURRENT STUDIES */
+
+    .dh-studies {
+        background-color: #FFFFFF;
+        color: #17223B;
+    }
+
+        .dh-studies h2 {
+            color: #17223B;
+        }
+
+        .dh-studies .dh-section-heading p {
+            color: #475569;
+        }
+
+    .dh-course-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .dh-course-card {
+        background-color: #F6F8FC;
+        border: 1px solid #E2E8F0;
+        border-radius: 14px;
+        padding: 30px;
+        min-width: 0;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .dh-course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+    .dh-course-code {
+        display: inline-block;
+        color: #315BB8;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .dh-course-card h4 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #D92E51;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .dh-course-card p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 0;
+        overflow-wrap: break-word;
     }
 
 
-    .skills-carousel-control-prev,
-    .skills-carousel-control-next {
+
+    /* PHOTO CAROUSEL: scoped fixes for original site.css */
+    #projectCarousel {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+        #projectCarousel .carousel-inner {
+            display: block; /* site.css sets flex, which interferes with slides */
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #projectCarousel .carousel-item {
+            flex: none;
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            padding: 25px 65px;
+            box-sizing: border-box;
+        }
+
+            #projectCarousel .carousel-item .row {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                gap: 0;
+            }
+
+            #projectCarousel .carousel-item .col-md-6:first-child,
+            #projectCarousel .carousel-item .col-md-6:last-child {
+                flex: 0 0 50%;
+                width: 50%;
+                max-width: 50%;
+                min-width: 0;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+
+        #projectCarousel img.dental-carousel-img {
+            display: block;
+            width: auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            object-position: center;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        #projectCarousel .carousel-control-prev {
+            left: 0;
+        }
+
+        #projectCarousel .carousel-control-next {
+            right: 0;
+        }
+
+    /* INSTRUMENT CAROUSEL: no global style modifications */
+    .dh-instruments {
+        background-color: #080D20;
+        color: white;
+    }
+
+        .dh-instruments h2 {
+            color: white;
+        }
+
+        .dh-instruments .dh-section-heading p {
+            color: #DCE5F5;
+        }
+
+    #instrumentCarousel {
+        position: relative;
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+        #instrumentCarousel .carousel-inner {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #instrumentCarousel .carousel-item {
+            flex: none;
+            width: 100%;
+            height: auto;
+            min-height: 390px;
+            padding: 25px 70px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+    .dh-instruments .instrument-slide {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+        .dh-instruments .instrument-slide h3 {
+            color: #B2FFFF;
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .dh-instruments .instrument-slide > p {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+    .dh-instruments .instrument-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .dh-instruments .instrument-card {
+        flex: 1 1 200px;
+        max-width: 260px;
+        min-width: 0;
+        padding: 22px 16px;
+        border: 1px solid #B2FFFF;
+        border-radius: 12px;
+        background-color: rgba(255,255,255,.07);
+        box-sizing: border-box;
+    }
+
+        .dh-instruments .instrument-card h4 {
+            color: #B2FFFF;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .dh-instruments .instrument-card p {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .dh-instruments .instrument-card img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            margin: 12px auto;
+            border-radius: 8px;
+        }
+
+    .instrument-carousel-prev,
+    .instrument-carousel-next {
         position: absolute;
-        top: 35%;
+        top: 45%;
         transform: translateY(-50%);
-        background-color: white;
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
         border-radius: 50%;
-        width: 80px;
-        height: 80px;
+        background: rgba(0,0,0,.55);
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         z-index: 10;
-        border: 1px solid white;
-        transition: transform 0.3s ease;
     }
 
-    .skills-carousel-control-prev {
-        left: -100px;
+    .instrument-carousel-prev {
+        left: 5px;
     }
 
-    .skills-carousel-control-next {
-        right: -100px;
+    .instrument-carousel-next {
+        right: 5px;
     }
 
-
-        .skills-carousel-control-prev:hover,
-        .skills-carousel-control-next:hover {
-            transform: translateY(-50%) scale(1.1);
+    @@media (max-width: 1100px) {
+        .dh-about.full-width,
+        .dh-studies.full-width,
+        .dh-instruments.full-width {
+            padding: 60px 25px;
         }
 
-</style>
-
-
-
-<style>
-    p strong {
-        position: relative;
-        padding-left: 10px;
-        font-weight: bold;
+        .dh-course-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
     }
 
-        p strong::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 4px;
-            background-color: #FFD700;
+    @@media (max-width: 1024px) {
+        #projectCarousel .carousel-item {
+            padding: 20px;
         }
 
-    .full-width {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        padding: 20px 0;
-    }
-
-
-
-    .skill-card {
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-        .skill-card h4 {
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-            color: #FF3855;
-        }
-
-        .skill-card p {
-            font-size: 0.95rem;
-        }
-
-</style>
-
-<script>
-
-    function handleCarouselAnimation(event) {
-
-        document.querySelectorAll('.carousel-item .animate').forEach(el => {
-            el.classList.remove('fade-up', 'fade-right', 'fade-in');
-        });
-
-        const activeSlide = event.relatedTarget;
-        activeSlide.querySelectorAll('.animate').forEach((el) => {
-            if (el.tagName === 'H3') {
-                el.classList.add('fade-up');
-            } else if (el.tagName === 'P' && el.querySelector('strong')) {
-                el.classList.add('fade-right');
-            } else if (el.tagName === 'P') {
-                el.classList.add('fade-up');
-            } else if (el.tagName === 'VIDEO') {
-                el.classList.add('fade-in');
-            } else {
-                el.classList.add('fade-in');
+            #projectCarousel .carousel-item .row {
+                flex-direction: column;
+                gap: 15px;
             }
-        });
+
+            #projectCarousel .carousel-item .col-md-6:first-child,
+            #projectCarousel .carousel-item .col-md-6:last-child {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+        #instrumentCarousel .carousel-item {
+            padding: 20px 55px;
+        }
     }
 
+    @@media (max-width: 768px) {
+        .dh-about.full-width,
+        .dh-studies.full-width,
+        .dh-instruments.full-width {
+            padding: 45px 16px;
+        }
 
-    document.getElementById('projectCarousel').addEventListener('slid.bs.carousel', handleCarouselAnimation);
+        .dh-course-grid {
+            grid-template-columns: 1fr;
+        }
 
-    document.getElementById('myCarousel').addEventListener('slid.bs.carousel', handleCarouselAnimation);
+        .dh-course-card {
+            padding: 24px;
+        }
 
-</script>
+        #instrumentCarousel .carousel-item {
+            padding: 20px 35px;
+            min-height: 0;
+        }
+
+        .dh-instruments .instrument-card {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+
+        .instrument-carousel-prev,
+        .instrument-carousel-next {
+            width: 34px;
+            height: 34px;
+        }
+
+        .instrument-carousel-prev {
+            left: 0;
+        }
+
+        .instrument-carousel-next {
+            right: 0;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        #projectCarousel .carousel-item {
+            padding: 15px 10px;
+        }
+
+            #projectCarousel .carousel-item .col-md-6:first-child,
+            #projectCarousel .carousel-item .col-md-6:last-child {
+                padding: 10px 5px;
+            }
+
+        #instrumentCarousel .carousel-item {
+            padding: 16px 30px;
+        }
+    }
+</style>
