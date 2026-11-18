@@ -3,3 +3,7 @@ appsettings.json
 bin/
 obj/
 node_modules/
+.vs/
+.vs/
+bin/
+obj/
